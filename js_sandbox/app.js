@@ -358,4 +358,4 @@ let birthday = new Date('9-10-1981');
 birthday = new Date('September 10 1981');
 birthday.setMonth(2); //changes it to March
 
-console.log(birthda y);
+console.log(birthday);
