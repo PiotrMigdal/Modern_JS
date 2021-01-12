@@ -341,7 +341,7 @@ for(let i = 0; i < people.length; i++){
 */
 
 //LESSON 15 date and time
-
+/*
 let val;
 const today = new Date(); //default is today
 
@@ -359,3 +359,69 @@ birthday = new Date('September 10 1981');
 birthday.setMonth(2); //changes it to March
 
 console.log(birthday);
+*/
+
+//LESSON 16
+/*
+const ID = 100;
+
+//Equal to
+if(ID == 100){
+    console.log(true);
+} else {
+    console.log(false);
+}
+
+//Equal to value and type - MOST PROGRAMERS USE THIS
+if(ID === 100){
+    console.log(true);
+} else {
+    console.log(false);
+}
+
+//check if variable is defined
+if(typeof ID !== 'undefined') {
+    console.log(`The ID is ${ID}`);
+} else {
+    console.log('No ID');
+}
+
+//if else
+const color = 'red'
+if(color === 'red'){
+    console.log('color is red');
+} else if(color === 'blue'){
+    console.log('color is blue');
+} else {
+    console.log('differnt color');
+}
+
+//Logical operators
+const name = 'steve';
+const age = '2';
+
+// AND &&
+if(age > 0 && age < 12){
+    console.log(`${name} is a child`);
+} else if(age >= 13 && age <= 19) {
+    console.log(`${name} is a teenager`);
+} else {
+    console.log(`${name} is adult`);
+}
+
+//OR ||
+if(age < 16 || age > 65){
+    console.log(`${name} can not run in race`);
+} else {
+    console.log(`${name} is registered for the race`);
+}
+
+//ternary operator
+console.log(ID === 101 ? 'it is 101' : ID === 100 ? 'it is 100' : 'it isnt 100 or 101');
+
+//without braces
+if(ID === 100)
+console.log('correct');
+else
+console.log('incorrect');
+*/
