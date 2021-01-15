@@ -425,3 +425,77 @@ console.log('correct');
 else
 console.log('incorrect');
 */
+
+//LESSON 17 switches
+/*
+//switches is the same as if but you can use if there is many of cases
+
+let day;
+
+switch(new Date().getDay()){
+    case 0: //this is like if(new Date().getDay() === 0)
+        day = 'Sunday'; //this is result
+        break;
+    case 1:
+        day = 'Monday';
+        break;
+    case 2:
+        day = 'Tuesday';
+        break;
+    case 3:
+        day = 'Wednesday';
+        break;
+    case 4:
+        day = 'Thursday';
+        break;
+    case 5:
+        day = 'Friday';
+        break;
+    case 6:
+        day = 'Saturday';
+        break;
+}
+console.log(`Today is ${day}`);
+*/
+//LESSON 18 Functions and expressions
+/*
+//function declarations (parameters)
+function greet(firstName = 'Jan', lastName = 'Kowalski'){ //declare default as Jan Kowalski - if there is undefined it will be Jan Kowalski
+     return 'Hello ' + firstName + ' ' + lastName;
+}
+console.log(greet('Steve', 'Smith'));
+
+//Function expressions
+
+const squere = function(x = 3) { //again default is 3
+    return x+x;
+};
+console.log(squere(2));
+
+//Immidietly Invokable Function Expressions IFFE
+(function(){
+    console.log('This is IFFE');
+})();
+
+(function(name){
+    console.log('Hello ' + name);
+})('Brad');
+
+// Property Methods
+const todo = {
+    add : function(){
+        console.log('Add task');
+    },
+    edit : function(ID){
+        console.log(`Edit ${ID}`);
+    }
+}
+todo.add();
+todo.edit(21);
+
+//different property method
+todo.delete = function(){
+    console.log('Delete todo');
+}
+todo.delete();
+*/
