@@ -582,3 +582,53 @@ for (let x in user){
     console.log(`${x} : ${[x]}`);
 }
 */
+
+//LESSON 20 - window objects and method
+// you can see all methods entering 'window' in browser console
+
+//alert
+//alert('HELLO');
+
+//Prompt
+// const input = prompt();
+// alert(input);
+
+//Confirm box
+// if(confirm('Are you sure?')){
+//     console.log('YES');
+// }
+
+let val;
+
+//outer height width - wysokosc zewnetrzna
+val = window.outerHeight;
+val = window.outerWeight;
+
+//inner heigth and width - wysokosc wewnetrzna bez np paskow scroll
+val = window.innerHeight;
+val = window.innerWidth;
+
+//ScrollY and ScrollX - position of scroll
+val = window.scrollY;
+val = window.scrollX;
+
+//LOCATION OBJECTS
+val = window.location; //shows all objects available
+val = window.location.hostname;
+val = window.location.search; //shows what is in address bar after domain
+
+//Redirect
+//window.location.href = 'https://google.com'
+
+//reload - keeps reloading
+//window.location.reload();
+
+//History go - open previous pages -1 last one, -2 two before etc
+//window.history.go(-1);
+//val = window.history.length;
+
+//NAVIGATOR OBJECTS - not window but browser itself
+val = window.navigator; //shows all
+val = window.navigator.appVersion;
+val = window.navigator.language;
+console.log(val);
