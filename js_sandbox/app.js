@@ -499,3 +499,86 @@ todo.delete = function(){
 }
 todo.delete();
 */
+
+//LESSON 19 Loops and Iterations
+/*
+//For loop
+for(let i = 0; i < 10; i++){
+    if(i === 2){
+        console.log(`${i} is my favorite number`);
+    continue;
+    }
+    if(i === 5){
+        console.log('Stop the loop');
+        break;
+    }
+    console.log(i);
+
+}
+*/
+
+//While loop - normally use if you dont know how many iterations
+/*
+let i = 0;
+while(i < 10){
+    console.log(i);
+    i++;
+}
+*/
+//Do while loop - same as while but runs at least 1 time
+/*
+let i = 100;
+
+do {
+    console.log(i);
+    i++;
+}
+while(i < 10);
+*/
+
+//LOOP TO ARRAY
+/*
+cars = ['Audi', 'Devoo', 'Peugeot', 'Renault'];
+// //For
+// for(i = 0; i < cars.length; i++){
+//     console.log(cars[i]);
+// }
+
+//Foreach - most clearer for array
+cars.forEach(function(car){
+    console.log(car);
+})
+
+//Foreach with index
+cars.forEach(function(car, index){
+    console.log(`${index} : ${car}`)
+})
+
+//foreach with array
+cars.forEach (function(car, index, array){
+    console.log(`${index} : ${car} | ${array}`)
+})
+
+//Map - use to return different array
+
+const users = [
+    {id: 1, name: 'John'},
+    {id: 2, name: 'Sarah'},
+    {id: 3, name: 'Susan'}
+]
+//create map - different array from array
+const ids = users.map(function(users){
+    return users.id;
+})
+console.log(ids);
+
+//For In Loop
+const user = {
+    firstName : 'John',
+    lastName : 'Doe',
+    age : 40
+}
+for (let x in user){
+    console.log(`${x} : ${[x]}`);
+}
+*/
