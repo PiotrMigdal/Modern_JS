@@ -130,7 +130,7 @@ for(let i=0; i < itemsEven.length; i++){
 */
 
 //LESSON 26 traversing the DOM
-
+/*
 let val;
 const list = document.querySelector('ul.collection');
 
@@ -176,3 +176,82 @@ val = listItem.previousElementSibling;
 
 
 console.log(val);
+*/
+//LESSON 27 CREATING ELEMENT
+/*
+li = document.createElement('li');
+
+//add class
+li.className = 'collection-item';
+
+//add id
+li.id = 'new-item';
+
+//add title
+li.setAttribute('title', 'New item');
+
+//add text
+li.appendChild(document.createTextNode('HELLO WORLD'));
+
+//Create link element and append to li
+const link = document.createElement('a');
+link.className = 'delete-item secondary-content';
+link.innerHTML = '<i class="fa fa-remove"></i>';
+link.setAttribute('href', '#');
+li.appendChild(link);
+
+//append ready child to ul
+document.querySelector('ul.collection').appendChild(li);
+
+console.log(li);
+*/
+
+//LESSON 28 REPLACE ELEMENT, REMOVE
+/*
+//create new element
+const newHeading = document.createElement('h2');
+newHeading.id = 'task-title';
+newHeading.appendChild(document.createTextNode('TaskList'));
+
+//get old heading
+const oldHeading = document.getElementById('task-title');
+
+//get parent of old heading
+const parentOfOld = oldHeading.parentElement;
+
+//replace
+parentOfOld.replaceChild(newHeading, oldHeading);
+
+//REMOVE
+const lis = document.querySelectorAll('li');
+
+lis[2].remove(); // removed the third
+
+//remove child element
+const list = document.querySelector('ul');
+list.removeChild(lis[1]); //removed second
+
+//REMOVE CLASSES
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+
+let val;
+
+//Classes
+val = link.className;
+val = link.classList;
+//val = link.classList[0]; // get first clas from list
+link.classList.add('test');
+link.classList.remove('test');
+
+//Attributes
+val = link.getAttribute('href');
+link.setAttribute('href', 'https://google.com');
+link.setAttribute('title', 'Google');
+val = link.hasAttribute('title');
+link.removeAttribute('title');
+val = link.hasAttribute('title');
+
+
+console.log(val);
+*/
