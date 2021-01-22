@@ -385,3 +385,88 @@ function runEvent(e){
   e.preventDefault(); //Default of form is action to sumbit to php
 }
 */
+//LESSON 32 EVENT BUBBLING AND DELEGATION
+/*
+//Event Bubblin - when you click on chrildren it will trigger its parents events
+document.querySelector('.card-title').addEventListener('click',
+function(){
+  console.log('card-title');
+});
+//parent
+document.querySelector('.card-content').addEventListener('click',
+function(){
+  console.log('card-content');
+});
+//parent
+document.querySelector('.card').addEventListener('click',
+function(){
+  console.log('card');
+});
+//parent
+document.querySelector('.col').addEventListener('click',
+function(){
+  console.log('col');
+});
+*/
+
+//EVENT DELEGATION
+//When click on parent, delegates it to children. Use if:
+//- website is dynamic and there is no this element in HTML it is added by JS
+//- wider range of elements
+/*
+document.body.addEventListener('click', deleteItem); //parent element is body
+
+function deleteItem(e){
+  if(e.target.parentElement.classList.contains('delete-item')){ //parent element of the X icon is <a class='delete-item'> we click on icon but finds it by <a></a>
+    e.target.parentElement.parentElement.remove(); //parent of parent of icon X is li element wich one we want to remove
+  }
+}
+*/
+
+//LESSON 33 LOCALSTORAGE
+//localStorage stays until you clear your browser data. sessionStorage clears when you close the browser
+/*
+//set local storage item
+localStorage.setItem('name', 'John'); //you can check in Chrome in devTools Application->Local Storage
+//set session storage item
+sessionStorage.setItem('name', 'Beth'); //you can check in Chrome in devTools Application->Session Storage
+
+//get from storage
+const name = localStorage.getItem('name');
+console.log(name); //returns John
+
+//remove items
+localStorage.removeItem('name');
+//clear entire local storage
+localStorage.clear()
+*/
+
+//Usage of local storage
+document.querySelector('form').addEventListener('submit',
+function(e){
+  const task = document.getElementById('task').value;
+
+  let tasks;
+
+  //we check if the value exist, if so we parse it to array
+  if(localStorage.getItem('tasks') === null){
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  //now we add our task to existing array
+  tasks.push(task);
+
+  //and add to the storage - as a string
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  alert('Task saved');
+  e.preventDefault();
+});
+
+//Get the storage to use - you need to parse to the function
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+tasks.forEach(function(task){
+  console.log(task);
+});
