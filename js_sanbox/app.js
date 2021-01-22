@@ -255,3 +255,133 @@ val = link.hasAttribute('title');
 
 console.log(val);
 */
+
+//LESSON 29 EVENT LISTENER AND EVENT OBJECT
+/*
+document.querySelector('.clear-tasks').addEventListener('click',
+function(){
+  console.log('hello');
+});
+//Prevent default events
+//- you can add # to link:<a href='#'></a>
+//- add preventDefault: function(e){(...) e.preventDefault();}
+
+//ONCLICK
+document.querySelector('.clear-tasks').addEventListener('click', onClick);
+
+function onClick(e){
+  let val;
+  val = e; //our event
+
+  //event target
+  val = e.target;
+  val = e.target.classList;
+  val = e.target.innerText = 'HELLO'; //changed btn text to HELLO
+
+  //event type
+  val = e.type;
+
+  //event timeStamp
+  val = e.timeStamp;
+
+  //Coords event relative to the window
+  val = e.clientY; //returns cursor postion relative to window
+  val = e.clientX;
+
+  //Coords event relative to the object
+  val = e.offsetY; //returns cursor postion relative to the button
+  val = e.offsetX;
+
+  console.log(val); // shows all posible events if not defined e
+
+}
+*/
+//LESSON 30 MOUSE EVENTS
+const clearBtn = document.querySelector('.clear-tasks');
+
+//Click
+//clearBtn.addEventListener('click', runEvent);
+//Double Click
+//clearBtn.addEventListener('dblclick', runEvent);
+//mousedown - click and hold to trigger
+//clearBtn.addEventListener('mousedown', runEvent);
+//Mouseup - opposite to mousedown you need to put button up to trigger
+//clearBtn.addEventListener('mouseup', runEvent);
+
+const card = document.querySelector('.card');
+/*
+//mouseenter when you hover over
+card.addEventListener('mouseenter', runEvent);
+//mouseleave when you stop hovering
+card.addEventListener('mouseleave', runEvent);
+//mouseenter when you hover over
+card.addEventListener('mouseover', runEvent);
+//mouseleave when you stop hovering
+card.addEventListener('mouseout', runEvent);
+//the difference between mouseenter/leave and mouseover/out is that if you hover over element within the target element you have mouseout but dont mouseout
+*/
+/*
+const heading = document.querySelector('h5');
+//mousemove trigger when you move mouse
+card.addEventListener('mousemove', runEvent);
+
+//Event Handler
+function runEvent(e){
+  console.log(`EVENT TYPE: ${e.type}`);
+
+  heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`; // shows postion wspolrzedne of mouse cursor
+  document.body.style.background = `rgb(${e.offsetX}, ${e.offsetY}, 40)`; //funny colours when move
+}
+*/
+
+//LESSON 31 KEYBOARD and INPUT EVENTS
+/*
+const form = document.querySelector('form');
+const taskInput = document.getElementById('task');
+const heading = document.querySelector('h5');
+//Clear value
+taskInput.value = '';
+
+//KEY EVENTS
+//keydown - when you press the key (event no character)
+//taskInput.addEventListener('keydown', runEvent);
+//keyup - when put the finger up
+//taskInput.addEventListener('keyup', runEvent);
+//keypress - when you enter character (no ctrl or alt is recorded)
+//taskInput.addEventListener('keypress', runEvent);
+
+//focus - click on element so it is focused
+//taskInput.addEventListener('focus', runEvent);
+//blur - opposite to focus - when you click out and unfocus element
+//taskInput.addEventListener('blur', runEvent);
+
+//cut
+//taskInput.addEventListener('cut', runEvent);
+//paste
+//taskInput.addEventListener('paste', runEvent);
+
+//input
+//taskInput.addEventListener('input', runEvent);
+
+//select - from select list
+//taskInput.addEventListener('select', runEvent);
+
+function runEvent(e){
+  console.log(`Event type: ${e.type}`);
+  //test keydown
+  heading.textContent = e.target.value;
+}
+
+
+//SUBMIT EVENT - forms
+form.addEventListener('submit', runEvent);
+
+function runEvent(e){
+  console.log(`Event type: ${e.type}`);
+
+  //Get input value
+  console.log(taskInput.value);
+
+  e.preventDefault(); //Default of form is action to sumbit to php
+}
+*/
