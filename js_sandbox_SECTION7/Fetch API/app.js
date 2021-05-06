@@ -5,7 +5,7 @@ document.getElementById('button3').addEventListener('click', getExternal);
 //FETCH TEXT FILE DATA
 function getText() {
     fetch('test.txt')
-    .then(function(res) {
+    .then(function(res) { //This is like one line so there is dot then
         return res.text(); // fetch is window promise so we need to use then to get text()..
     })
     .then(function(data) {
